@@ -34,13 +34,28 @@
     text-shadow: 2px 2px 0 #0039a6; pointer-events: none;
   }
   @media (orientation: portrait) { #hint { display: block; } }
+  /* Поле ввода ника: невидимое, но настоящее — чтобы на телефоне открывалась клавиатура */
+  #nick {
+    position: fixed; left: 50%; top: 50%; z-index: 3;
+    width: 260px; height: 34px; margin: 0; padding: 0 10px;
+    transform: translate(-50%, -50%);
+    opacity: 0; border: 0; outline: none;
+    background: transparent; color: #fff;
+    font-family: "Courier New", monospace; font-size: 18px;
+    text-align: center; caret-color: #ffd700;
+  }
+  #nick:disabled { display: none; }
 </style>
 </head>
 <body>
 <canvas id="game" width="800" height="360"></canvas>
 <button id="fsBtn" tabindex="-1" title="Полный экран (F)">⛶</button>
 <div id="hint">↻ Поверните телефон горизонтально</div>
-<script src="game.js"></script>
+<input id="nick" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="Имя игрока">
+<script src="part1.js"></script>
+<script src="part2.js"></script>
+<script src="part3.js"></script>
+<script src="part4.js"></script>
 <script>
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js').catch(() => {});
