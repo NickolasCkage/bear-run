@@ -1,8 +1,11 @@
-const CACHE = 'bear-run-v2';
+const CACHE = 'bear-run-v3';
 const ASSETS = [
   './',
   './index.html',
-  './game.js',
+  './part1.js',
+  './part2.js',
+  './part3.js',
+  './part4.js',
   './manifest.webmanifest',
   './icon-192.png',
   './icon-512.png',
