@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#0039a6">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Мишка на снегу — 8-bit Россия</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<style>
+  html, body {
+    margin: 0; width: 100%; height: 100%; overflow: hidden;
+    background: #000; font-family: "Courier New", monospace;
+    user-select: none; -webkit-user-select: none;
+    touch-action: none; overscroll-behavior: none;
+  }
+  #game {
+    position: fixed; inset: 0; width: 100%; height: 100%;
+    object-fit: contain; image-rendering: pixelated;
+    background: #000; touch-action: none;
+  }
+  #fsBtn {
+    position: fixed; bottom: 10px; right: 10px; z-index: 2;
+    width: 44px; height: 44px; font-size: 22px; line-height: 40px;
+    padding: 0; cursor: pointer; color: #fff;
+    background: rgba(11, 26, 51, 0.7); border: 3px solid #fff;
+    box-shadow: 3px 3px 0 #d52b1e, 6px 6px 0 #0039a6;
+  }
+  #hint {
+    display: none; position: fixed; bottom: 8px; left: 0; right: 0; z-index: 2;
+    text-align: center; color: #fff; font-size: 14px;
+    text-shadow: 2px 2px 0 #0039a6; pointer-events: none;
+  }
+  @media (orientation: portrait) { #hint { display: block; } }
+</style>
+</head>
+<body>
+<canvas id="game" width="800" height="360"></canvas>
+<button id="fsBtn" tabindex="-1" title="Полный экран (F)">⛶</button>
+<div id="hint">↻ Поверните телефон горизонтально</div>
+<script src="game.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  }
+</script>
+</body>
+</html>

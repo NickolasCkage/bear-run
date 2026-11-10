@@ -1,0 +1,14 @@
+{
+  "name": "Мишка на снегу — 8-bit Россия",
+  "short_name": "Мишка на снегу",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#0b1a33",
+  "theme_color": "#0039a6",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
